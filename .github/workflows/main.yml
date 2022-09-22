@@ -22,7 +22,7 @@ jobs:
     - name: Set working directory to android
       run: cd ./android
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x ./gradlew
     - name: Build with Gradle
       run: ./gradlew assembleDebug
     - name: Firebase App Distribution Action
