@@ -31,7 +31,7 @@ jobs:
         # Firebase App ID. You can find it in the Firebase console, on the General Settings page.
         appId: 1:290577007748:android:992dc0bc9e8497fa3baed1
         # Path of IPA or APK file to distribution.
-        file: ./android/app/build/outputs/apk/release/app-debug.apk
+        file: ./android/app/build/outputs/apk/debug/app-debug.apk
         # 'Firebase access token. You can create it by `firebase login:ci` on your local machine.
         token: 1//03XaYOixBEQ10CgYIARAAGAMSNwF-L9IrlkaTmU0AYiQrAe2Ss3f2HwlWBrYJzHc013l9CUMFAhu5S-xzAdBRrJ4YP069HpRJYZI
         # Distribution groups
