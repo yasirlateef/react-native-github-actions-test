@@ -19,11 +19,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-
+    - name: Set working directory to android
+      run: cd ./android
     - name: Grant execute permission for gradlew
-      run: chmod +x ./android/gradlew
+      run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./android/gradlew assembleDebug
+      run: ./gradlew assembleDebug
     - name: Firebase App Distribution Action
       # You may pin to the exact commit or the version.
       # uses: hasretsariyer/firebase-app-distribution-github-action@1efdc61b2aecd54be4072edb5dd527be26571943
@@ -32,7 +33,7 @@ jobs:
         # Firebase App ID. You can find it in the Firebase console, on the General Settings page.
         app_id: 1:290577007748:android:992dc0bc9e8497fa3baed1
         # Path of IPA or APK file to distribution.
-        app_file: ./android/app/build/outputs/apk/release/app-release.apk
+        app_file: ./app/build/outputs/apk/release/app-release.apk
         # 'Firebase access token. You can create it by `firebase login:ci` on your local machine.
         firebase_token: 1//03XaYOixBEQ10CgYIARAAGAMSNwF-L9IrlkaTmU0AYiQrAe2Ss3f2HwlWBrYJzHc013l9CUMFAhu5S-xzAdBRrJ4YP069HpRJYZI
         # Distribution groups
