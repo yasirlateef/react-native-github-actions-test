@@ -20,6 +20,8 @@ platform :android do
   desc "Increment version code and commit"
   lane :increment_version do
     increment_version_code
+    sh("git", "config", "user.name", "Yasir Latif")
+    sh("git", "config", "user.email", "yasirlateef112@gmail.com")
     git_commit(path: "./app/build.gradle", message: "Version Bump")
   end
 end
