@@ -21,6 +21,21 @@ jobs:
         cache: gradle
     - name: Install project dependencies
       run: npm i
+    - name: Fastlane Action
+      # You may pin to the exact commit or the version.
+      # uses: maierj/fastlane-action@e61c14e51992662d76090be48296e79755f97469
+      uses: maierj/fastlane-action@v2.2.1
+      with:
+        # The lane that should be executed.
+        lane: increment_version
+        # The relative path from the project root directory to the subdirectory where the fastlane folder is located.
+        subdirectory: android
+        # The directory where Ruby gems should be installed to and cached. If a relative path is specified, it's applied relative to the location of the Gemfile, which is either the project root or the directory from the `subdirectory` parameter.
+        bundle-install-path: android
+        # If set to true, adds the verbose option to the fastlane command for extended log output.
+        verbose: false
+        # The action tracks usage in Firebase by default. You can disable tracking by setting this parameter to 'true'.
+        skip-tracking: true
     - name: Grant execute permission for gradlew
       run: chmod +x ./android/gradlew
     - name: Build with Gradle
